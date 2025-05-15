@@ -8,7 +8,7 @@ import cup7 from '../../assets/cups/Rectangle 15.png'
 import cup8 from '../../assets/cups/Rectangle 16.png' 
 function Gallery() {
   return (
-    <div className="w-9/12 mx-auto p-10 my-10">
+    <div className="w-9/12 mx-auto p-10 mb-10">
       <p className="text-center text-xl">Follow Us Now</p>
       <h3 className="text-[#331A15] text-4xl text-center text-shadow-lg text-shadow-[#331A15] my-4">
         Follow on Instagram
