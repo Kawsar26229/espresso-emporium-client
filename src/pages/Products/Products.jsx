@@ -23,20 +23,25 @@ function Products() {
         <title>Espresso Emporium | Products</title>
       </Helmet>
       <div className="w-9/12 mx-auto p-10">
-        <h3 className="text-[#331A15] text-4xl text-center text-shadow-lg text-shadow-[#331A15] mb-4">
+        <h3 className="text-[#331A15] text-4xl text-center text-shadow-lg text-shadow-[#331A15]">
           Our Coffee House
         </h3>
         <div className="flex justify-center">
           <Link
             to="/add-coffee"
-            className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white"
+            className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white mt-6"
           >
             Add Coffee <FiCoffee className="text-[#331A15]" />
           </Link>
         </div>
         <main className="grid grid-cols-2 gap-4 my-10">
           {coffees?.map((coffee) => (
-            <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>
+            <CoffeeCard
+              key={coffee._id}
+              coffee={coffee}
+              coffees={coffees}
+              setCoffees={setCoffees}
+            ></CoffeeCard>
           ))}
         </main>
       </div>

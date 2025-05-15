@@ -1,8 +1,10 @@
+import axios from "axios";
 import { FaEye, FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
-function CoffeeCard(coffee) {
+function CoffeeCard({ coffee, coffees, setCoffees }) {
   const {
     _id,
     coffeeName,
@@ -12,7 +14,36 @@ function CoffeeCard(coffee) {
     coffeeCategory,
     coffeeDetails,
     coffeePhoto,
-  } = coffee?.coffee;
+  } = coffee;
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Are you sure that you want to delete it?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:4000/coffees/${id}`)
+          .then((res) => {
+            if (res.data.acknowledged) {
+              Swal.fire({
+                title: "Good Luck !!!",
+                text: "Deleted coffee details",
+                icon: "success",
+              });
+              setCoffees(coffees?.filter((c) => c._id !== id));
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    });
+  };
   return (
     <div className="card card-side bg-[#F5F4F1] shadow-sm">
       <figure className="pl-5 w-full">
@@ -40,12 +71,12 @@ function CoffeeCard(coffee) {
           >
             <FaPencilAlt />
           </Link>
-          <Link
-            to="/delete-coffee"
+          <button
+            onClick={() => handleDelete(_id)}
             className="btn bg-[#EA4744] text-white rounded-lg join-item"
           >
             <MdDelete />
-          </Link>
+          </button>
         </div>
       </div>
     </div>
