@@ -5,16 +5,16 @@ function Header() {
   const navLinks = (
     <>
       <li>
-        <NavLink className='text-xl mr-1 text-white' to='/'>Home</NavLink>
+        <NavLink className='text-xl text-white mr-1' to='/'>Home</NavLink>
       </li>
       <li>
-        <NavLink className='text-xl mr-1 text-white' to='/products'>Products</NavLink>
+        <NavLink className='text-xl text-white mr-1' to='/products'>Products</NavLink>
       </li>
       <li>
-        <NavLink className='text-xl mr-1 text-white' to='/about-us'>About Us</NavLink>
+        <NavLink className='text-xl text-white mr-1' to='/about-us'>About Us</NavLink>
       </li>
       <li>
-        <NavLink className='text-xl mr-1 text-white' to='/contact-us'>Contact Us</NavLink>
+        <NavLink className='text-xl text-white mr-1' to='/contact-us'>Contact Us</NavLink>
       </li>
     </>
   );
