@@ -1,0 +1,63 @@
+import { NavLink } from "react-router";
+import navBg from '../../assets/more/15.jpg'
+
+function Header() {
+  const navLinks = (
+    <>
+      <li>
+        <NavLink className='text-xl mr-1 text-white' to='/'>Home</NavLink>
+      </li>
+      <li>
+        <NavLink className='text-xl mr-1 text-white' to='/products'>Products</NavLink>
+      </li>
+      <li>
+        <NavLink className='text-xl mr-1 text-white' to='/about-us'>About Us</NavLink>
+      </li>
+      <li>
+        <NavLink className='text-xl mr-1 text-white' to='/contact-us'>Contact Us</NavLink>
+      </li>
+    </>
+  );
+  return (
+    <div className="navbar shadow-sm" style={{ backgroundImage: `url(${navBg})` }}>
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {" "}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />{" "}
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            {navLinks}
+          </ul>
+        </div>
+        <NavLink to='/' className=" text-3xl text-white">Espresso Emporium</NavLink>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          {navLinks}
+        </ul>
+      </div>
+      <div className="navbar-end">
+        <NavLink to='/login' className="btn bg-[#221818] text-white text-xl">Login</NavLink>
+      </div>
+    </div>
+  );
+}
+
+export default Header;
