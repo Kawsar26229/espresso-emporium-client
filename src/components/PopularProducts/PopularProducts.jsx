@@ -2,7 +2,6 @@ import { FiCoffee } from "react-icons/fi";
 import { Link } from "react-router";
 import popularImg from "../../assets/more/1.png";
 import img1 from "../../assets/1.png";
-import img2 from "../../assets/2.png";
 import { FaEye, FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
@@ -17,7 +16,7 @@ function PopularProducts() {
         Our Popular Products
       </h3>
       <div className="flex justify-center">
-        <Link className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white">
+        <Link to='/add-coffee' className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white">
           Add Coffee <FiCoffee className="text-[#331A15]" />
         </Link>
       </div>
@@ -32,19 +31,28 @@ function PopularProducts() {
           </div>
           <div className="card-actions justify-end items-center mr-8">
             <div className="join join-vertical gap-3">
-              <Link to='/details-coffee' className="btn bg-[#D2B48C] text-white rounded-lg join-item">
+              <Link
+                to="/details-coffee"
+                className="btn bg-[#D2B48C] text-white rounded-lg join-item"
+              >
                 <FaEye />
               </Link>
-              <Link to='/update-coffee' className="btn bg-[#3C393B] text-white rounded-lg join-item">
+              <Link
+                to="/update-coffee"
+                className="btn bg-[#3C393B] text-white rounded-lg join-item"
+              >
                 <FaPencilAlt />
               </Link>
-              <Link to='/delete-coffee' className="btn bg-[#EA4744] text-white rounded-lg join-item">
+              <Link
+                to="/delete-coffee"
+                className="btn bg-[#EA4744] text-white rounded-lg join-item"
+              >
                 <MdDelete />
               </Link>
             </div>
           </div>
         </div>
-       <div className="card card-side bg-[#F5F4F1] shadow-sm">
+        <div className="card card-side bg-[#F5F4F1] shadow-sm">
           <figure>
             <img src={img1} alt="Movie" />
           </figure>
@@ -133,6 +141,11 @@ function PopularProducts() {
           </div>
         </div>
       </main>
+      <div className="flex justify-center">
+        <Link className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white">
+          Show More <FiCoffee className="text-[#331A15]" />
+        </Link>
+      </div>
     </div>
   );
 }
