@@ -7,6 +7,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import AddCoffee from "../pages/AddCoffee/AddCoffee";
+import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/add-coffee",
         element: <AddCoffee/>
+      },
+      {
+        path: "/update-coffee",
+        element: <UpdateCoffee/>
       },
       {
         path: "/about-us",
