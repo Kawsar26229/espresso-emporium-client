@@ -19,7 +19,7 @@ function Header() {
     </>
   );
   return (
-    <div className="navbar shadow-sm" style={{ backgroundImage: `url(${navBg})` }}>
+    <div className="navbar shadow-sm px-36" style={{ backgroundImage: `url(${navBg})` }}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
