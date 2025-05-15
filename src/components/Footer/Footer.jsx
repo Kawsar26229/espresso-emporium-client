@@ -10,10 +10,10 @@ function Footer() {
   return (
     <footer>
       <div
-        className="footer text-neutral-content p-8"
+        className="footer text-neutral-content p-10"
         style={{ backgroundImage: `url(${footerBg})` }}
       >
-        <main className="w-11/12 mx-auto grid grid-cols-2 gap-10">
+        <main className="w-9/12 mx-auto grid grid-cols-2 gap-10">
           <aside>
             <img src={footerLogo} className="w-14" alt="Espresso Emporium" />
             <h3 className="text-[#331A15] text-3xl text-shadow-md text-shadow-[#331A15]">
