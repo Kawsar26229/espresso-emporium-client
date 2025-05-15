@@ -3,9 +3,16 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
 
 function CoffeeCard(coffee) {
-    const {coffeeName, coffeeChef, coffeeSupplier, coffeeTaste, coffeeCategory, coffeeDetails, coffeePhoto} = coffee?.coffee
-    console.log(coffeePhoto);
-    
+  const {
+    _id,
+    coffeeName,
+    coffeeChef,
+    coffeeSupplier,
+    coffeeTaste,
+    coffeeCategory,
+    coffeeDetails,
+    coffeePhoto,
+  } = coffee?.coffee;
   return (
     <div className="card card-side bg-[#F5F4F1] shadow-sm">
       <figure className="pl-5 w-full">
@@ -22,7 +29,7 @@ function CoffeeCard(coffee) {
       <div className="card-actions justify-end items-center mr-8">
         <div className="join join-vertical gap-5">
           <Link
-            to="/details-coffee"
+            to={`/details-coffee/${_id}`}
             className="btn bg-[#D2B48C] text-white rounded-lg join-item"
           >
             <FaEye />

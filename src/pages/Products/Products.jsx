@@ -23,7 +23,7 @@ function Products() {
         <title>Espresso Emporium | Products</title>
       </Helmet>
       <div className="w-9/12 mx-auto p-10">
-        <h3 className="text-[#331A15] text-4xl text-center text-shadow-lg text-shadow-[#331A15] my-4">
+        <h3 className="text-[#331A15] text-4xl text-center text-shadow-lg text-shadow-[#331A15] mb-4">
           Our Coffee House
         </h3>
         <div className="flex justify-center">
