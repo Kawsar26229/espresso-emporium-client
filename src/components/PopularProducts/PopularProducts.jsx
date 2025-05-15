@@ -32,15 +32,15 @@ function PopularProducts() {
           </div>
           <div className="card-actions justify-end items-center mr-8">
             <div className="join join-vertical gap-3">
-              <button className="btn bg-[#D2B48C] text-white rounded-lg join-item">
+              <Link to='/details-coffee' className="btn bg-[#D2B48C] text-white rounded-lg join-item">
                 <FaEye />
-              </button>
-              <button className="btn bg-[#3C393B] text-white rounded-lg join-item">
+              </Link>
+              <Link to='/update-coffee' className="btn bg-[#3C393B] text-white rounded-lg join-item">
                 <FaPencilAlt />
-              </button>
-              <button className="btn bg-[#EA4744] text-white rounded-lg join-item">
+              </Link>
+              <Link to='/delete-coffee' className="btn bg-[#EA4744] text-white rounded-lg join-item">
                 <MdDelete />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
