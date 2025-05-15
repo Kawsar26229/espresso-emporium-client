@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet"
+
 function ContactUs() {
   return (
     <div>
