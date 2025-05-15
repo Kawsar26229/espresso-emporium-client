@@ -66,7 +66,7 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
             <FaEye />
           </Link>
           <Link
-            to="/update-coffee"
+            to={`/update-coffee/${_id}`}
             className="btn bg-[#3C393B] text-white rounded-lg join-item"
           >
             <FaPencilAlt />

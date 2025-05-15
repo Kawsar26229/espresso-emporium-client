@@ -1,17 +1,61 @@
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import addCoffeeBg from "../../assets/more/11.png";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
-function UpdateCoffee() {
+function UpdateCoffee() {  
+  const {
+    _id,
+    coffeeName,
+    coffeeChef,
+    coffeeSupplier,
+    coffeeTaste,
+    coffeeCategory,
+    coffeeDetails,
+    coffeePhoto,
+  } = useLoaderData();
     const handleSubmit = (e) => {
         e.preventDefault()
+        const form = e.target
+        const name = form.name.value;
+        const chef = form.chef.value;
+        const supplier = form.supplier.value;
+        const taste = form.taste.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+        axios.put(`http://localhost:4000/coffees/${_id}`, {
+          coffeeName: name,
+          coffeeChef: chef,
+          coffeeSupplier: supplier,
+          coffeeTaste: taste,
+          coffeeCategory: category,
+          coffeeDetails: details,
+          coffeePhoto: photo
+        })
+        .then(res => {
+          if(res.data?.acknowledged) {
+            toast.success(`${name} is successfully updated.`, {
+              className: 'text-xl'
+            })
+          }
+        })
+        .catch(error => {
+          console.log(error)
+        })
+        form.reset()
     }
   return (
     <div
       className="w-9/12 mx-auto p-10"
       style={{ backgroundImage: `url(${addCoffeeBg})` }}
     >
+      <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
       <Helmet>
         <title>Espresso Emporium | Update Coffee</title>
       </Helmet>
@@ -39,6 +83,7 @@ function UpdateCoffee() {
                   className="input w-96 text-lg"
                   name="name"
                   type="text"
+                  defaultValue={coffeeName}
                   placeholder="Enter coffee name"
                 />
             </div>
@@ -46,7 +91,8 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Chef</p>
                 <input
                   className="input w-96 text-lg"
-                  name="name"
+                  name="chef"
+                  defaultValue={coffeeChef}
                   type="text"
                   placeholder="Enter coffee chef"
                 />
@@ -55,8 +101,9 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Supplier</p>
                 <input
                   className="input w-96 text-lg"
-                  name="name"
+                  name="supplier"
                   type="text"
+                  defaultValue={coffeeSupplier}
                   placeholder="Enter coffee supplier"
                 />
             </div>
@@ -64,7 +111,8 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Taste</p>
                 <input
                   className="input w-96 text-lg"
-                  name="name"
+                  name="taste"
+                  defaultValue={coffeeTaste}
                   type="text"
                   placeholder="Enter coffee taste"
                 />
@@ -73,7 +121,8 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Category</p>
                 <input
                   className="input w-96 text-lg"
-                  name="name"
+                  name="category"
+                  defaultValue={coffeeCategory}
                   type="text"
                   placeholder="Enter coffee category"
                 />
@@ -82,8 +131,9 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Details</p>
                 <input
                   className="input w-96 text-lg"
-                  name="name"
+                  name="details"
                   type="text"
+                  defaultValue={coffeeDetails}
                   placeholder="Enter coffee details"
                 />
             </div>
@@ -91,7 +141,8 @@ function UpdateCoffee() {
                 <p className="text-lg mb-1">Photo</p>
                 <input
                   className="input w-full text-lg"
-                  name="name"
+                  name="photo"
+                  defaultValue={coffeePhoto}
                   type="text"
                   placeholder="Enter photo URL"
                 />
