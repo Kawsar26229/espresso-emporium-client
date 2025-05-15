@@ -1,6 +1,7 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router";
 import addCoffeeBg from "../../assets/more/11.png";
+import { Helmet } from "react-helmet";
 
 function AddCoffee() {
     const handleSubmit = (e) => {
@@ -11,6 +12,9 @@ function AddCoffee() {
       className="w-9/12 mx-auto p-10"
       style={{ backgroundImage: `url(${addCoffeeBg})` }}
     >
+      <Helmet>
+        <title>Espresso Emporium | Add Coffee</title>
+      </Helmet>
       <Link
         to="/"
         className="flex gap-2 text-xl text-shadow-md text-shadow-gray-800"

@@ -1,6 +1,11 @@
 function AboutUs() {
   return (
-    <div>AboutUs</div>
+    <div>
+      <Helmet>
+        <title>Espresso Emporium | About Us</title>
+      </Helmet>
+      <h2>About Us</h2>
+    </div>
   )
 }
 

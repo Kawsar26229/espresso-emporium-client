@@ -9,6 +9,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import AddCoffee from "../pages/AddCoffee/AddCoffee";
 import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 import DetailedCoffee from "../pages/DetailesCoffee/DetailedCoffee";
+import Register from "../pages/Register/Register";
 
 export const router = createBrowserRouter([
   {
@@ -25,15 +26,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-coffee",
-        element: <AddCoffee/>
+        element: <AddCoffee />,
       },
       {
         path: "/update-coffee",
-        element: <UpdateCoffee/>
+        element: <UpdateCoffee />,
       },
       {
-        path: '/details-coffee',
-        element: <DetailedCoffee/>
+        path: "/details-coffee",
+        element: <DetailedCoffee />,
       },
       {
         path: "/about-us",
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "*",

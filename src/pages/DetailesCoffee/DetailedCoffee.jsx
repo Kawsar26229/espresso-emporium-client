@@ -2,6 +2,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router";
 import addCoffeeBg from "../../assets/more/11.png";
 import coffee from '../../assets/1.png'
+import { Helmet } from "react-helmet";
 
 function DetailedCoffee() {
   return (
@@ -9,6 +10,9 @@ function DetailedCoffee() {
       className="w-9/12 mx-auto p-10"
       style={{ backgroundImage: `url(${addCoffeeBg})` }}
     >
+      <Helmet>
+        <title>Espresso Emporium | Details Coffee</title>
+      </Helmet>
       <Link
         to="/"
         className="flex gap-2 text-xl text-shadow-md text-shadow-gray-800"

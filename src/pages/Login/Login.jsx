@@ -1,6 +1,13 @@
+import { Helmet } from "react-helmet"
+
 function Login() {
   return (
-    <div>Login</div>
+    <div>
+      <Helmet>
+        <title>Espresso Emporium | Login</title>
+      </Helmet>
+      <h2>Login</h2>
+    </div>
   )
 }
 
