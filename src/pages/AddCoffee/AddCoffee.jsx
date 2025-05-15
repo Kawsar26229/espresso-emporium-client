@@ -31,7 +31,7 @@ function AddCoffee() {
         coffeeTaste: taste,
         coffeeCategory: category,
         coffeeDetails: details,
-        photoURL: photo,
+        coffeePhoto: photo,
       })
       .then((res) => {
         if (res.data.insertedId) {

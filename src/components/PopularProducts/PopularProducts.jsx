@@ -142,7 +142,7 @@ function PopularProducts() {
         </div>
       </main>
       <div className="flex justify-center">
-        <Link className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white">
+        <Link to='/products' className="btn bg-[#E3B577] border-[#331A15] border-1 text-lg font-extralight text-white">
           Show More <FiCoffee className="text-[#331A15]" />
         </Link>
       </div>
